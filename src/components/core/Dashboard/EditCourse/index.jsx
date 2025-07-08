@@ -22,6 +22,7 @@ export default function EditCourse() {
       const result = await getFullDetailsOfCourse(courseId, token)
       if (result?.courseDetails) {
         dispatch(setEditCourse(true))
+// $&
         dispatch(setCourse(result?.courseDetails))
       }
       setLoading(false)

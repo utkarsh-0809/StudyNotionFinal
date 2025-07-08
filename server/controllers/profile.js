@@ -81,11 +81,14 @@ exports.deleteAccount = async (req, res) => {
     }
     // Now Delete User
     await User.findByIdAndDelete({ _id: id })
+    // await CourseProgress.deleteMany({ userId: id })
     res.status(200).json({
       success: true,
       message: "User deleted successfully",
     })
+    // this code here will still execute
     await CourseProgress.deleteMany({ userId: id })
+    
   } catch (error) {
     console.log(error)
     res

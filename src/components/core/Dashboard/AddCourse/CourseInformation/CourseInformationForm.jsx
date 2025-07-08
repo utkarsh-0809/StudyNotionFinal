@@ -13,9 +13,10 @@ import {
 import { setCourse, setStep } from "../../../../../slices/courseSlice"
 import { COURSE_STATUS } from "../../../../../utils/constants"
 import IconBtn from "../../../../Common/IconBtn"
-import Upload from "../Upload"
+// import Upload from "../Upload"
 import ChipInput from "./ChipInput"
 import RequirementsField from "./RequirementsField"
+import Upload from "../Upload"
 
 export default function CourseInformationForm() {
   const {
@@ -80,7 +81,7 @@ export default function CourseInformationForm() {
 
   //   handle next button click
   const onSubmit = async (data) => {
-    console.log(data)
+// $&
 
     if (editCourse) {
       // const currentValues = getValues()
@@ -266,6 +267,7 @@ export default function CourseInformationForm() {
         setValue={setValue}
         errors={errors}
         editData={editCourse ? course?.thumbnail : null}
+        onClick={() => console.log("Clicked input")}
       />
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
